@@ -35,9 +35,9 @@ export async function uploadToGoogleCloud(fileElement: string, fileName: string,
     {
         const base64 = fileElement.replace(/^data:image\/\w+;base64,/, '');
         const buffer = Buffer.from(base64, 'base64');
-        fs.writeFileSync(`./${fileName}.jpg`, buffer);
+        fs.writeFileSync(`/tmp/${fileName}.jpg`, buffer);
         const bucket = storage.bucket(`${env.GOOGLE_CLOUD_BUCKET_NAME}`);
-        await bucket.upload(`./${fileName}.jpg`, {
+        await bucket.upload(`/tmp/${fileName}.jpg`, {
             destination: `${location}/${fileName}.jpg`,
 
         });
