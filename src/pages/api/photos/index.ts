@@ -5,7 +5,7 @@ import { createTRPCContext } from "../../../server/api/trpc";
 import { TRPCError } from "@trpc/server";
 import { getHTTPStatusCodeFromError } from "@trpc/server/http";
 import { uploadToGoogleCloud } from "~/server/api/utils/gcs";
-import crypto from 'crypto';
+import { v4 as uuid } from 'uuid'; 
 export default async function handler(req: NextApiRequest, res: NextApiResponse)
 {
     const ctx = await createTRPCContext({ req, res });
@@ -16,7 +16,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const { photo_data, location } = req.body;
         if (!photo_data || !location || typeof photo_data !== 'string' || typeof location !== 'string') return res.status(400).json({ message: 'Bad Request, Missing Parameters' });
-        const PHOTO_ID = crypto.randomUUID();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        const PHOTO_ID: string = uuid();
         const photoUrl = await uploadToGoogleCloud(photo_data, PHOTO_ID, location);
         console.error(photoUrl)
         res.status(200).json({ photoUrl, photoId: PHOTO_ID });

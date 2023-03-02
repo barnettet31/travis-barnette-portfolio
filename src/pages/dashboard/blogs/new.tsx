@@ -12,12 +12,12 @@ import { useState } from "react";
 import { MetaDialog } from "../../../components/metaDialog/metaDialog.component";
 import { postPhoto } from "~/axios/postPhoto";
 const NewBlog: NextPageWithLayout = () => {
-  const [image, setImage] = useState<File|null>(null);
-    const [showMetaEditor, setShowMetaEditor] = useState<boolean>(false);
-    const [metaData, setMetaData] = useState<{
-      title: string;
-      description: string;
-    } | null>(null);
+  const [image, setImage] = useState<File | null>(null);
+  const [showMetaEditor, setShowMetaEditor] = useState<boolean>(false);
+  const [metaData, setMetaData] = useState<{
+    title: string;
+    description: string;
+  } | null>(null);
 
   const router = useRouter();
 
@@ -60,28 +60,29 @@ const NewBlog: NextPageWithLayout = () => {
 
   const handlePost = async (d: string) => {
     //first post the photo to get the id
-    if(!image) return console.log("no image selected");
+    if (!image) return console.log("no image selected");
 
     try {
       const base64 = await convertToBase64(image);
-      if(!base64) return console.log("error converting image to base64");
+      if (!base64) return console.log("error converting image to base64");
       const photoId = await postBlogPhoto({
         file: base64,
         location: "blogs",
       });
-      if(!photoId) return console.log("error posting photo");
-          if (!metaData) return setShowMetaEditor(true);
-          if (!metaData.description || !metaData.title)
-            return console.log("Project Meta Data Required");
+      console.log(photoId);
+      if (!photoId) return console.log("error posting photo");
+      if (!metaData) return setShowMetaEditor(true);
+      if (!metaData.description || !metaData.title)
+        return console.log("Project Meta Data Required");
 
       const fileData = await postFile({
         title: metaData.title,
         content: d,
         imageId: photoId.photoId,
-        image:photoId.photoUrl,
+        image: photoId.photoUrl,
         description: metaData.description,
       });
-      if(!fileData) return await router.replace('/dashboard');
+      if (!fileData) return await router.replace("/dashboard");
       await router.replace(`/dashboard/blogs/edit/${fileData.id}`);
       //then post the blog with the photo id
     } catch (e) {
