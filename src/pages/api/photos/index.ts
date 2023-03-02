@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (!photo_data || !location || typeof photo_data !== 'string' || typeof location !== 'string') return res.status(400).json({ message: 'Bad Request, Missing Parameters' });
         const PHOTO_ID = crypto.randomUUID();
         const photoUrl = await uploadToGoogleCloud(photo_data, PHOTO_ID, location);
-
+        console.error(photoUrl)
         res.status(200).json({ photoUrl, photoId: PHOTO_ID });
 
 
@@ -28,9 +28,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (cause instanceof TRPCError)
         {
             const httpCode = getHTTPStatusCodeFromError(cause);
+            console.error(cause);
             res.status(httpCode).json(cause);
         }
-        console.error(cause);
+        console.error(cause)
         res.status(500).json({ message: 'Internal Server Error' });
     }
 }
