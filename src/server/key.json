@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "portfolio-site-377901",
+    "private_key_id": "2a45eaaa1c645b7b63f785fffa4ec54552c5febd",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDG+wIy0Tsf9P78\nhRgxNl0BYqTBrQY5MCT6QwLNIIlJ1aM/X6MF4X3Zo7raskFfX5tiXutCAEofFaLz\nZV5s4QvPhMZBbwTw2rPkKTeWRr101AS807NN2JJJJKZuv0x05OlQ/dcZvceKb0qH\nkaCtOseQjdk80wPZcJr19Ipq0UylGAIQbLZ3b9kwnuzkiHOt5uCdohdzptM3toSM\nYVzvI1p/kbvh/myfHrNX1UMDZWxmbTZ1IXB5uPdpaE+47nfmK0soj9SPDRgRt0IW\nr5mzpbO4wxZnO4eSuZr1H5KcRfo5vjXsfH3nYYDY9xvBUvaq9wnwrKji0jUqLQmx\nkydS5BADAgMBAAECggEANrh630zJDL3MjddwUsBXjXT6SET0DDAgSy64i37iIor9\nDQWZCJn9iSfM0C3ranYZflEKM6luuOOzX2pGMH0nSVeDSiVk33PVuu5W2h30JjfU\nYbV6fvMLL9BDcPts5Ey7mUllqS+Wu4xlm6jB3kHm9er8jgyd52NfSjqJAl0yzcez\nS4KD+Py6gwgRlPB2rf03DK5Bfa0d7dZxtlRoPfjBXRGEcvfRbx7AOXw/vorlrwTD\nrK1V/47mQlTDjMfTgyxVtGq+XsIBHakJD3w3Y7jOP8Da7VbGzxDaUtdKtNZ1VgKX\nNmPo5PoqZv9iGTSc3HLkfQp7kUQ9Gjz57ECN3AvYMQKBgQDky8FqKaURMKx/kg0f\nywmQASGEzYG+fhhF0lKJ2k1v26ZAD5tmVfogvK7G7+CdpkHSs7yIfANKkf60UIdR\nHgbUkzFm31rAm2a0VIaWsBeR3ymvpv0LPzLh1PsO3WwkQ/DmocfBqoYkMKEn35LR\nmLqOrcAMJBABKCa6shZqBru9iQKBgQDeo7YWGA/2Ups/eKlh+F74F9FSEGWZ+V/7\nE3TmrXj9H0/0uFGMPsVxb6o5ZB4mzYsZ37D5QCEeC21xoDvacvobwIARFTU0n9S9\npa1WtIVeZN5hgcO7YWFKNdZ0miUvmGzq8Lixts/sGifxvixoRRN9SyYaCvdZfFW1\nAiaeWjzqKwKBgQCtwVv67vOQEYH/RAC5k22IsoMtIxEUhRiT9f1++Y3zlEE2x2OC\nHWte70xggo33y+qTRLK6iEvLlwJzF/EcFoyjZcGP2bJHMf2Wl9a6m7LasjsrTctA\nfld7EE8148yb4gkSbeyRVJqY42GQMYeDq9SKRMPjtIN/DWoUQOkqzkBH2QKBgA1n\nugz2ge+I5cQalchKVh2GAZp5VkTBGSBa+YzyIPjMq9nGR1K0bNr5qDwwZQhdE+UI\n7PT1AYl3kq1mwnPSvHBzVMKyjjOO9BY/JYK099rJJAKm94wOvvbi6vi2V0rYWKaE\nu/onUbmbkZAirTXSAuxmW/LxehcvP1HYwU6DjGtlAoGBAI0ndVjHjt0HT7uWHn9K\nd6/tF3WhEh6FEyyaYDiOJue/LA7+s2zQfyaxsqzM9oH6PO9nO4DuduztB2rsmWqu\nr4DWMzYjnCv/mJArUcquROAowfq0jOg5vYDE2QWb5AfmGmrTeom96eT7lCVhso2F\nPi0ewrZN6DTIEBADetokg6Of\n-----END PRIVATE KEY-----\n",
+    "client_email": "travis-barnette@portfolio-site-377901.iam.gserviceaccount.com",
+    "client_id": "115810904133729177436",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/travis-barnette%40portfolio-site-377901.iam.gserviceaccount.com"
+}
