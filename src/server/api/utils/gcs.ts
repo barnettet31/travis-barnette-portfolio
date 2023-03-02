@@ -41,7 +41,7 @@ export async function uploadToGoogleCloud(fileElement: string, fileName: string,
             destination: `${location}/${fileName}.jpg`,
 
         });
-        fs.unlinkSync(`./${fileName}.jpg`);
+        fs.unlinkSync(`/tmp/${fileName}.jpg`);
         const url = `https://storage.googleapis.com/${env.GOOGLE_CLOUD_BUCKET_NAME}/${location}/${fileName}.jpg`;
         return url;
     } catch (e)
