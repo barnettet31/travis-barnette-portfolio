@@ -114,18 +114,6 @@ export const MenuBar = ({
       isActive: editor.isActive("heading", { level: 2 }),
     },
     {
-      name: "Bullet List",
-      onClick: () => editor.chain().focus().toggleBulletList().run(),
-      disabled: null,
-      isActive: editor.isActive("bulletList"),
-    },
-    {
-      name: "Ordered List",
-      onClick: () => editor.chain().focus().toggleOrderedList().run(),
-      disabled: null,
-      isActive: editor.isActive("orderedList"),
-    },
-    {
       name: "Code Block",
       onClick: () => editor.chain().focus().toggleCode().run(),
       disabled: !editor.can().chain().focus().toggleCode().run(),

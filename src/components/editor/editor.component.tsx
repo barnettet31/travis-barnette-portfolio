@@ -1,13 +1,12 @@
-import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import {
   type Editor,
   EditorContent,
   useEditor,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { lowlight } from "lowlight/lib/core";
 import { useEffect, useState } from "react";
 import {  MenuBar } from "../menuBar/menuBar.component";
+import ListItem from "@tiptap/extension-list-item";
 interface IContentEditorProps {
   handleSave: (content: string) => void;
   isLoading: boolean;
@@ -28,8 +27,7 @@ export const ContentEditor = ({
 addImageFunc, 
 showMeta
 }: IContentEditorProps) => {
-  const [isEditable] = useState(true);
-
+  const [isEditable] = useState(true);6
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -53,7 +51,7 @@ showMeta
           }
         }
         
-      }),
+      })
     ],
     content: content || "Your content goes here",
     editorProps: {
