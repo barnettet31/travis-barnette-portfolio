@@ -41,17 +41,25 @@ showMeta
           keepMarks: true,
           keepAttributes: true,
         },
+        codeBlock:{
+          HTMLAttributes: {
+            class: "bg-zinc-800 text-gray-100 p-4 rounded-md shadow-md",
+          },
+          
+        },
+        heading:{
+          HTMLAttributes: {
+            class:"text-3xl font-bold"
+          }
+        }
         
-      }),
-      CodeBlockLowlight.configure({
-        lowlight,
       }),
     ],
     content: content || "Your content goes here",
     editorProps: {
       attributes: {
         class:
-          "h-full min-h-[500px] static bg-zinc-800 max-w-none text-gray-100 prose prose-xl dark:prose-invert w-full mx-auto p-4 z-0 m-5 focus:outline-none rounded-md shadow-md",
+          "h-full min-h-[500px] static bg-zinc-800 max-w-none text-gray-100 prose md:prose-xl dark:prose-invert w-full mx-auto p-4 z-0 m-5 focus:outline-none rounded-md shadow-md",
       },
     },
   });
