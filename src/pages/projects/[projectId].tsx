@@ -80,6 +80,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
        meta: meta,
        link:projectInfo.liveUrl
      },
+      revalidate: 60,
    };
 };
 export default ProjectPage;

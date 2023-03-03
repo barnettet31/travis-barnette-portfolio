@@ -77,6 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       source: blogInfo.content,
       meta: meta,
     },
+    revalidate: 60,
   };
 };
 export default BlogPage;

@@ -12,9 +12,15 @@ const DashboardProjectPage = ({
   projectContent: string;
   projectId: string;
 }) => {
-  const { mutate, isLoading } = api.projects.updateProject.useMutation();
+  const { mutate, isLoading } = api.projects.updateProject.useMutation({
+    onSuccess: (d) => {
+      console.log(d)
+    },
+    onError: (e) => {
+      console.error(e);
+    }
+  });
   const handleSave = (d: string) => {
-    console.log({"content received from editor:":d})
     mutate({
       id: projectId,
       title: projectTitle,
@@ -53,7 +59,7 @@ export const getStaticProps = async ({ params }: Params) => {
     if (!projectInfo) {
       return {
         notFound: true,
-        revalidate: 60,
+        revalidate: 10,
       };
     }
     return {
@@ -62,6 +68,7 @@ export const getStaticProps = async ({ params }: Params) => {
         projectContent: projectInfo.content,
         projectId: projectInfo.id,
       },
+      revalidate:60
     };
   } catch (e) {
     return {

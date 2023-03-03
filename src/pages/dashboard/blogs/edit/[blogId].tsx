@@ -57,6 +57,7 @@ export const getStaticProps = async ({ params }: Params) => {
         blogContent: blogInfo.content,
         blogId: blogInfo.id,
       },
+      revalidate: 10,
     };
   } catch (e) {
     return {
