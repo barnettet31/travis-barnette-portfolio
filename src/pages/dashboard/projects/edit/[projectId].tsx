@@ -13,9 +13,6 @@ const DashboardProjectPage = ({
   projectId: string;
 }) => {
   const { mutate, isLoading } = api.projects.updateProject.useMutation({
-    onSuccess: (d) => {
-      console.log(d)
-    },
     onError: (e) => {
       console.error(e);
     }

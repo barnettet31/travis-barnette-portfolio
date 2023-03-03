@@ -48,11 +48,11 @@ export async function getStaticProps() {
       where: { status: 'published' },
       orderBy: { createdAt: "desc" },
     });
-    const blogsToReturn = blogs.map((project) => {
+    const blogsToReturn = blogs.map((blog) => {
       return {
-        ...project,
-        createdAt: project.createdAt.toISOString(),
-        updatedAt: project.updatedAt.toISOString(),
+        ...blog,
+        createdAt: blog.createdAt.toISOString(),
+        updatedAt: blog.updatedAt.toISOString(),
       };
     });
     return {

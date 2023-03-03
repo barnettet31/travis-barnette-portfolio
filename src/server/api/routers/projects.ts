@@ -98,7 +98,8 @@ export const projectRouter = createTRPCRouter({
                     userId: ctx.session?.user.id,
                     status: 'published',
                     image: input.image,
-                    imageId: input.imageId
+                    imageId: input.imageId,
+                    liveUrl:input.liveUrl
                 }
             });
             return data;

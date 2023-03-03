@@ -88,11 +88,7 @@ export const MenuBar = ({
     {
       name: "H1",
       onClick: () => {
-      editor.chain().focus().toggleHeading({ level: 1 }).run();
-        console.log(
-          editor.can().chain().focus().toggleHeading({ level: 1 }).run()
-        );
-    
+      editor.chain().focus().toggleHeading({ level: 1 }).run();    
       },
       disabled: null,
       isActive: editor.isActive("heading", { level: 1 }),
