@@ -100,7 +100,7 @@ export function MetaDialog({
                   </label>
                   <textarea
                     {...register("description")}
-                    className="block w-full rounded-md border-gray-300 text-black shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm"
+                    className="block w-full p-2 rounded-md border-gray-300 text-black shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm"
                   />
                 </div>
               </div>

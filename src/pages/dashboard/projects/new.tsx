@@ -50,7 +50,6 @@ const NewProject: NextPageWithLayout = () => {
       const reader = new FileReader();
 
       reader.readAsDataURL(f);
-
       reader.onload = () => resolve(reader.result as string);
       reader.onerror = (error) => reject(error);
     });

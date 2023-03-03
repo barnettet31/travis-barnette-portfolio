@@ -1,7 +1,8 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { type Editor } from "@tiptap/react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import { MarkdownForm } from "../markdownForm/markdownForm.component";
 
 export interface IMenuOption {
   name: string;
@@ -29,6 +30,7 @@ export const MenuBar = ({
   addImageFunc,
   showMeta,
 }: IMenuBarProps) => {
+  const [markdownShown, setMarkdownShown] = useState(false);
   if (!editor) {
     return null;
   }
@@ -94,6 +96,14 @@ export const MenuBar = ({
       },
       disabled: null,
       isActive: editor.isActive("heading", { level: 1 }),
+    },
+    {
+      name:"Add Markdown",
+      onClick: () => {
+        setMarkdownShown(true);
+      },
+      disabled: null,
+      isActive: null,
     },
     {
       name: "Code",
@@ -193,6 +203,11 @@ export const MenuBar = ({
             </Menu.Items>
           </Transition>
         </Menu>
+        <MarkdownForm
+        editor={editor}
+        markdownShown={markdownShown}
+        setMarkdownShown={setMarkdownShown}
+        />
         {imageAdd ? (
           <input
             onChange={eventHandler}
@@ -201,6 +216,7 @@ export const MenuBar = ({
             className="hidden"
           />
         ) : null}
+
       </div>
     </div>
   );
