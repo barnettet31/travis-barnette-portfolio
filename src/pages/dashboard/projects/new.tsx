@@ -106,7 +106,6 @@ const NewProject: NextPageWithLayout = () => {
         submitHandler={(d)=>{
 
             setMetaData({title:d.title, description:d.description, liveUrl:d.liveUrl??""});
-            console.log(metaData)
             setShowMetaEditor(false);
         }}
       />

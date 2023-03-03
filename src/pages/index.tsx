@@ -26,7 +26,7 @@ const Home = ({blogs, projects}:{projects:Project[], blogs:Blog[]}) => {
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               Hi! My Name is Travis Barnette, a full stack software engineer
-              based in the beatiful Shenandoah Valley in Virginia. I am
+              based in the beautiful Shenandoah Valley in Virginia. I am
               passionate about building software that helps people and
               businesses. Currently working at{" "}
               <a

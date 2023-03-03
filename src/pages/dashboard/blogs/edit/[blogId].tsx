@@ -2,6 +2,7 @@ import { getDashboardLayout } from "../../../../components/dashboardLayout/dashb
 import { prisma } from "../../../../server/db";
 import { api } from "../../../../utils/api";
 import { ContentEditor } from "../../../../components/editor/editor.component";
+import { LoadOverlay } from "~/components/loadOverlay/loadOverlay.component";
 const DashboardBlogPage = ({
   blogTitle,
   blogContent,
@@ -20,7 +21,8 @@ const DashboardBlogPage = ({
       });
     
   };
- 
+   if (isLoading) return <LoadOverlay />;
+
   return (
    <ContentEditor isLoading={isLoading} handleSave={handleSave} assetTitle={blogTitle} content={blogContent}/>
   );

@@ -2,6 +2,7 @@ import { getDashboardLayout } from "../../../../components/dashboardLayout/dashb
 import { prisma } from "../../../../server/db";
 import { api } from "../../../../utils/api";
 import { ContentEditor } from "../../../../components/editor/editor.component";
+import { LoadOverlay } from "~/components/loadOverlay/loadOverlay.component";
 const DashboardProjectPage = ({
   projectTitle,
   projectContent,
@@ -19,6 +20,7 @@ const DashboardProjectPage = ({
       content: d,
     });
   };
+  if (isLoading) return <LoadOverlay />;
 
   return (
     <ContentEditor

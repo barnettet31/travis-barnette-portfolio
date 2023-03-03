@@ -41,6 +41,7 @@ showMeta
           keepMarks: true,
           keepAttributes: true,
         },
+        
       }),
       CodeBlockLowlight.configure({
         lowlight,
@@ -50,7 +51,7 @@ showMeta
     editorProps: {
       attributes: {
         class:
-          "h-full static bg-zinc-800 max-w-none text-gray-100 prose prose-xl dark:prose-invert w-full mx-auto p-4 z-0 m-5 focus:outline-none rounded-md shadow-md",
+          "h-full min-h-[500px] static bg-zinc-800 max-w-none text-gray-100 prose prose-xl dark:prose-invert w-full mx-auto p-4 z-0 m-5 focus:outline-none rounded-md shadow-md",
       },
     },
   });

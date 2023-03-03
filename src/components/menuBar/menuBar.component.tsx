@@ -85,7 +85,13 @@ export const MenuBar = ({
     },
     {
       name: "H1",
-      onClick: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
+      onClick: () => {
+      editor.chain().focus().toggleHeading({ level: 1 }).run();
+        console.log(
+          editor.can().chain().focus().toggleHeading({ level: 1 }).run()
+        );
+    
+      },
       disabled: null,
       isActive: editor.isActive("heading", { level: 1 }),
     },
@@ -121,8 +127,8 @@ export const MenuBar = ({
     },
     {
       name: "Code Block",
-      onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-      disabled: null,
+      onClick: () => editor.chain().focus().toggleCode().run(),
+      disabled: !editor.can().chain().focus().toggleCode().run(),
       isActive: editor.isActive("codeBlock"),
     },
     {
