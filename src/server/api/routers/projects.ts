@@ -5,6 +5,7 @@ import
     publicProcedure,
     protectedProcedure,
 } from "~/server/api/trpc";
+import { handleDeleteFromGoogleCloud } from "../utils/gcs";
 
 export const projectRouter = createTRPCRouter({
     get: protectedProcedure.input(z.object({ id: z.string() })).query(async({ ctx, input }) =>
@@ -115,7 +116,9 @@ export const projectRouter = createTRPCRouter({
                 id: input.id
             }
         });
-        return data;
+        const deletedFile = await handleDeleteFromGoogleCloud(`projects/images/${data.imageId}.jpg`);
+        return deletedFile;
+
 
         //TODO delete project content from google cloud
     })

@@ -14,6 +14,7 @@ const DashboardProjectPage = ({
 }) => {
   const { mutate, isLoading } = api.projects.updateProject.useMutation();
   const handleSave = (d: string) => {
+    console.log({"content received from editor:":d})
     mutate({
       id: projectId,
       title: projectTitle,

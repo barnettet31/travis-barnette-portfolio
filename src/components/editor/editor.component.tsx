@@ -6,7 +6,6 @@ import {
 import StarterKit from "@tiptap/starter-kit";
 import { useEffect, useState } from "react";
 import {  MenuBar } from "../menuBar/menuBar.component";
-import ListItem from "@tiptap/extension-list-item";
 interface IContentEditorProps {
   handleSave: (content: string) => void;
   isLoading: boolean;
