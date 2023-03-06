@@ -17,7 +17,7 @@ auth_provider_x509_cert_url:string;
 client_x509_cert_url:string;
 }
 
-const { private_key, client_email } = JSON.parse(env.GOOGLE_CLOUD_SECRET);
+const { private_key, client_email } = JSON.parse(Buffer.from(env.GOOGLE_CLOUD_SECRET, 'base64').toString().replaceAll('/\n/g',""));
 
 const storage = new Storage({
     projectId: env.GOOGLE_CLOUD_PROJECT,
